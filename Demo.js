@@ -1,11 +1,35 @@
 let UserForm = document.getElementById('UserForm');
 let UserList = document.getElementById('UserList');
+let ShowCase = document.getElementById('ShowCase');
+let ShowCaseData = document.getElementById('ShowCaseData');
 
 let Users = [];
 
 
+function CloseShowCase()
+{
+    ShowCase.style.visibility = 'hidden';
+}
+function showShowCase()
+{
+    ShowCase.style.visibility = 'visible';
+}
+
+function HandleClick(e)
+{
+    showShowCase();
+    ShowCaseData.innerText = `Id:- ${e.Id}\n Name: ${e.Name}\n Age: ${e.Age}`
+}
+
 function DisplayUsers() {
-    UserList.innerHTML = Users.map((e)=>`<p class = 'UserName'>${e.Name}</p>`)
+    UserList.innerHTML = "";
+    Users.map((e)=>{
+        let MyPara = document.createElement('p');
+        MyPara.className = "UserName";
+        MyPara.innerHTML = e.Name;
+        MyPara.addEventListener('click', ()=>{HandleClick(e)});
+        UserList.appendChild(MyPara);
+    })
 }
 
 
