@@ -111,8 +111,9 @@ body
     justify-content: center;
     font-size: 32px;
     color: black;
+    flex-direction: column;
 }
-#ShowCase button
+#Close
 {
     position: absolute;
     right: 10px;
@@ -126,7 +127,7 @@ body
     cursor: pointer;
     user-select: none;
 }
-#ShowCase button:active
+#Close:active
 {
     background-color: red;
 }
@@ -181,6 +182,42 @@ body
     cursor: pointer;
 }
 .UserName:active
+{
+    transform: scale(0.96);
+}
+
+#BtnGrp
+{
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    column-gap: 20px;
+}
+
+#BtnGrp button:first-of-type
+{
+    padding: 8px 17px;
+    background-color: rgb(2, 128, 178);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    user-select: none;
+}
+#BtnGrp button:last-of-type
+{
+    padding: 8px 17px;
+    background-color: rgb(255, 7, 81);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#BtnGrp button:active
 {
     transform: scale(0.96);
 }

@@ -2,6 +2,8 @@ let UserForm = document.getElementById('UserForm');
 let UserList = document.getElementById('UserList');
 let ShowCase = document.getElementById('ShowCase');
 let ShowCaseData = document.getElementById('ShowCaseData');
+let UpdateBtn = document.getElementById('UpdateBtn');
+let DeleteBtn = document.getElementById('DeleteBtn');
 
 let Users = [];
 
@@ -15,10 +17,12 @@ function showShowCase()
     ShowCase.style.visibility = 'visible';
 }
 
+let currentUser;
 function HandleClick(e)
 {
     showShowCase();
     ShowCaseData.innerText = `Id:- ${e.Id}\n Name: ${e.Name}\n Age: ${e.Age}`
+    currentUser = e;
 }
 
 function DisplayUsers() {
@@ -33,7 +37,7 @@ function DisplayUsers() {
 }
 
 
-
+console.log(UserForm)
 UserForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let userDetails = {Id: e.target[0].value, Name: e.target[1].value, Age: e.target[2].value};
@@ -44,5 +48,12 @@ UserForm.addEventListener('submit', (e) => {
 
     DisplayUsers();
 });
+
+
+DeleteBtn.addEventListener('click',()=>{
+    Users.splice(Users.indexOf(currentUser),1);
+    DisplayUsers();
+})
+
 
 
