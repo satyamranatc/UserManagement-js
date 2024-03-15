@@ -1,57 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UserManagement</title>
-    <link rel="stylesheet" href="./Demo.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./Demo.css" />
+  </head>
+  <body>
     <div id="Main">
+      <div id="UserForm">
+        <form>
+          <input type="text" placeholder="Enter Your Id " />
+          <input type="text" placeholder="Enter Your Name " />
+          <input type="text" placeholder="Enter Your Age " />
 
-        <div id="UserForm">
-            <form>
-                <input type="text" placeholder="Enter Your Id ">
-                <input type="text" placeholder="Enter Your Name ">
-                <input type="text" placeholder="Enter Your Age ">
-           
-                <div>
-                    <button type="submit">Submit</button>
-                    <button type="reset">Reset</button>
-                </div>
+          <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
 
-            </form>
+      <div id="DisplayData">
+        <div id="ShowCase">
+          <button id="Close" onclick="CloseShowCase()">Close</button>
+          <div id="ShowCaseData"></div>
+
+          <div id="BtnGrp">
+            <button id="UpdateBtn">Update</button>
+            <button id="DeleteBtn">Delete</button>
+          </div>
         </div>
 
-
-       <div id="DisplayData">
-
-           <div id="ShowCase">
-                <button id = "Close" onclick="CloseShowCase()">Close</button>
-                <div id ="ShowCaseData"></div>
-
-                <div id="BtnGrp">
-                    <button id="UpdateBtn"  >Update</button>
-                    <button id="DeleteBtn"  >Delete</button>
-                </div>
-            </div>
-
-            <div id="UserData">
-                <h2>User Details</h2>
-                <hr>
-               <div id="UserList">
-               
-               </div>
-            </div>
-
-
-
-       </div>
-
-
+        <div id="UserData">
+          <h2>User Details</h2>
+          <hr />
+          <div id="UserList"></div>
+        </div>
+      </div>
     </div>
-    
-</body>
-<script src="./Demo.js"></script>
+  </body>
+  <script src="./Demo.js"></script>
 </html>
